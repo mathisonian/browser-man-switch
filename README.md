@@ -9,9 +9,7 @@ Intro
 -----
 
 This is a python script that periodically checks the last time you've used a web browser. If that time is
-greater than a certain threshold, you are presumed dead, and any browser history is deleted. This could be used to make sure that your 
-enemies don't steal any of your secrets, or to make sure that
-loved ones don't see any... ahem... unpleasantries.
+greater than a certain threshold, you are presumed dead, and any browser history is deleted. 
 
 Usage
 -----
@@ -34,8 +32,7 @@ This is a command line python program. Run like so:
 python history-cleaner.py --chrome --time 7 --daemon
 ```
 
-This will cause the process to start in the background as a daemon, clearing my chrome history if I don't
-login for 7 or more days. 
+This will cause the process to start in the background as a daemon, clearing your chrome history if chrome isn't used for 7 or more days. 
 
 ### Options
 
