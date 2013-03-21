@@ -10,7 +10,7 @@ Intro
 
 This is a python script that periodically checks the last time you've used a web browser. If that time is
 greater than a certain threshold, you are presumed dead, and any browser history is deleted, to make sure that
-loved ones don't see any... aghem... unpleasantries on your computer.
+loved ones don't see any... ahem... unpleasantries on your computer.
 
 Usage
 -----
@@ -42,7 +42,7 @@ login for 7 or more days.
 * `chrome` - Actively monitor chrome
 * `firefox` - Actively monitor firefox
 * `safari` - Actively monitor safari
-* `daemon` - Run as a background process
+* `daemon` - Run as a background process. Defaults to foreground mode.
 
 If one of `chrome`, `firefox`, or `safari`, is not flagged, chrome will be assumed. You can do any combination of the three.
 
@@ -52,5 +52,5 @@ Running on Startup
 It is important that you have this setup to run on startup. To do so, add the following to your crontab file (stored in `/etc/crontab`). Make sure to edit as root.
 
 ```
-@reboot <command to run>
+@reboot python /path/to/history-cleaner.py <options>
 ```
