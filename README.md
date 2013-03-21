@@ -9,7 +9,8 @@ Intro
 -----
 
 This is a python script that periodically checks the last time you've used a web browser. If that time is
-greater than a certain threshold, you are presumed dead, and any browser history is deleted, to make sure that
+greater than a certain threshold, you are presumed dead, and any browser history is deleted. This could be used to make sure that your 
+enemies don't steal any of your secrets, or to make sure that
 loved ones don't see any... ahem... unpleasantries.
 
 Usage
