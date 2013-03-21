@@ -17,7 +17,7 @@ Usage
 
 ### Installation
 
-First checkout this repository to a nice place. Then clone it with 
+Clone this repository to a nice place with 
 
 ```
 git clone git://github.com/mathisonian/browser-man-switch.git
