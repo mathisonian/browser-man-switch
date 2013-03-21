@@ -1,13 +1,13 @@
 browser-man-switch
 ==================
 
-A Dead Man's Switch to clear your browser history on OSX.
+A [Dead Man's Switch](http://en.wikipedia.org/wiki/Dead_man's_switch) to clear your browser history on OSX.
 *Note: Currently only works with Chrome*
 
 
 
 > If she murders me, tell Jean-Ralphio to clear my browser history.
-
+>
 > -- Tom Haverford
 
 
