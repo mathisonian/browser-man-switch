@@ -33,12 +33,12 @@ class HistoryDeleter(Daemon):
     # Handle file opening / creating / reading / writing
     #
 
-    def _ensure_dir(f):
+    def _ensure_dir(self, f):
         d = os.path.dirname(f)
         if not os.path.exists(d):
             os.makedirs(d)
 
-    def _touch(fname, times=None):
+    def _touch(self, fname, times=None):
         with file(fname, 'a'):
             os.utime(fname, times)
 
@@ -83,7 +83,6 @@ class HistoryDeleter(Daemon):
         return True
 
     def do_cleanup(self):
-        print "do cleanup"
         if self._used_recently():
             return
 
@@ -92,7 +91,6 @@ class HistoryDeleter(Daemon):
             try:
                 shutil.rmtree(CHROME_DATA_PATH)
             except Exception, e:
-                print "fail"
                 print e
 
         if self.firefox:
@@ -106,9 +104,7 @@ class HistoryDeleter(Daemon):
         Check if we need to attempt cleanup
         '''
         while True:
-            if self.check_needs_cleanup():
-                self.do_cleanup()
-
+            self.do_cleanup()
             sleep(60)
 
     def run(self):
@@ -127,7 +123,6 @@ def signal_handler(signum, frame):
 if __name__ == "__main__":
     try:
         import argparse
-
         signal.signal(signal.SIGINT, signal_handler)
         parser = argparse.ArgumentParser(description='Delete your browser history after you die. OSX Only')
         parser.add_argument('-c', '--chrome', action='store_true', dest="CHROME",
@@ -138,15 +133,15 @@ if __name__ == "__main__":
                             help='delete history from safari')
         parser.add_argument('-t', '--time', type=float, dest="TIME",
                             help='how many days of no browser usage until we assume you are dead?')
-        parser.add_argument('-d', '--daemon', type='store_true', dest="DAEMON",
+        parser.add_argument('-d', '--daemon', action='store_true', dest="DAEMON",
                             help='should this run as a background daemon?')
 
         args = parser.parse_args()
-
         # if args.PORT:
         #     PORT = args.PORT
         # if args.PATH:
         #     FILE_PREFIX = args.PATH
+
         if args.TIME:
             length = args.TIME
         else:
