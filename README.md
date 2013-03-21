@@ -30,7 +30,7 @@ Move into that directory with ```cd browser-man-switch``` and you are ready to s
 This is a command line python program. Run like so:
 
 ```
-python history-cleaner.py --chrome --length 7 --daemon
+python history-cleaner.py --chrome --time 7 --daemon
 ```
 
 This will cause the process to start in the background as a daemon, clearing my chrome history if I don't
@@ -38,7 +38,7 @@ login for 7 or more days.
 
 ### Options
 
-* `length` - Time in days to wait before assuming you are dead. Can be fractional (eg `7.5`)
+* `time` - Time in days to wait before assuming you are dead. Can be fractional (eg `7.5`). Defaults to 7 days
 * `chrome` - Actively monitor chrome
 * `firefox` - Actively monitor firefox
 * `safari` - Actively monitor safari

@@ -147,8 +147,12 @@ if __name__ == "__main__":
         #     PORT = args.PORT
         # if args.PATH:
         #     FILE_PREFIX = args.PATH
+        if args.TIME:
+            length = args.TIME
+        else:
+            length = 7
 
-        daemon = HistoryDeleter(chrome=args.CHROME or (not args.FIREFOX and not args.SAFARI), firefox=args.FIREFOX, safari=args.SAFARI, pidfile=PATH + '.switch.pid')
+        daemon = HistoryDeleter(chrome=args.CHROME or (not args.FIREFOX and not args.SAFARI), firefox=args.FIREFOX, safari=args.SAFARI, length=length, pidfile=PATH + '.switch.pid')
 
         if args.DAEMON:
             daemon.start()
