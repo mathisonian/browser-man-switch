@@ -59,3 +59,14 @@ It is important that you have this setup to run on startup. To do so, add the fo
 ```
 @reboot python /path/to/history-cleaner.py <options>
 ```
+
+Author
+----
+* Matthew Conlen, http://www.mathisonian.com
+
+
+License
+----
+Copyright © 2013 Matthew Conlen
+
+This program is free software. It comes without any warranty, to the extent permitted by applicable law. You can redistribute it and/or modify it under the terms of the WTFPL, Version 2, as published by Sam Hocevar. See http://sam.zoy.org/wtfpl/ for more details.
